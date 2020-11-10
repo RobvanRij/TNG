@@ -7,12 +7,12 @@ Building the Docker Image Locally
 Copy your licensed TNG installation to tng13.0 in this folder.
 
 ```
-docker-compose -p tng build
+docker-compose -p TNG13 build
 ```
 
-Start TNG
+Start TNG13
 ```
-docker-compose -p tng up -d
+docker-compose -p TNG13 up -d
 ```
 
 Complete the setup at
@@ -27,7 +27,7 @@ Complete the setup at
 
 Stop TNG
 ```
-docker-compose -p tng down
+docker-compose -p TNG13 down
 ```
 
 Your content will be persisted in the docker volume __tng_my-db__.
