@@ -4,7 +4,7 @@ services:
   family:
     build:
       context: .
-    container_name: TNG_13.1
+    container_name: TNG
     ports:
     - 80:80
     tty: true
@@ -16,10 +16,10 @@ services:
 
   db:
     image: mysql:latest
-    container_name: tng_mysql-server
-    networks:
-            testing_net:
-                ipv4_address: 172.28.0.2
+    container_name: tng_mysql
+    #networks:
+    #        testing_net:
+    #            ipv4_address: 172.29.0.2
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
@@ -39,9 +39,9 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: tng_phpmyadmin-client
-    networks:
-            testing_net:
-                ipv4_address: 172.28.0.3
+    #networks:
+    #        testing_net:
+    #            ipv4_address: 172.29.0.3
     environment:
     - PMA_HOST=db
     - PMA_PORT=3306
@@ -56,9 +56,9 @@ volumes:
   my-db:
   tnghtml:
 
-networks:
-    testing_net:
-        ipam:
-            driver: default
-            config:
-                - subnet: 172.28.0.0/16
+#networks:
+#    testing_net:
+#        ipam:
+#            driver: default
+#            config:
+#                - subnet: 172.29.0.0/16
