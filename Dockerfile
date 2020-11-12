@@ -10,7 +10,7 @@ FROM php:7-apache
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install mysqli
 
-COPY tng13.0/ /var/www/html/
+COPY tng/ /var/www/html/
 
 RUN cd /var/www/html && \
     chown -Rv www-data: adminlog.txt config.php mmconfig.php genlog.txt \
